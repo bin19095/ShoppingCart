@@ -1,13 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from './Context/productContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    
+    <BrowserRouter>
+    <Provider>
+      <App />
+    </Provider>
+    </BrowserRouter>
+ 
   </React.StrictMode>
 );
 
