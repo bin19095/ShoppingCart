@@ -1,9 +1,12 @@
+
 import React from 'react';
 import './ProductCard.css';
 import { Link } from 'react-router-dom';
 import { Card, Col } from 'react-bootstrap';
 import ReactStars from 'react-rating-stars-component';
 import { useNavigate } from 'react-router-dom';
+
+import ViewProduct from '../ViewProduct/ViewProduct';
 
 const ProductCard = ({products}) => {
     const navigate = useNavigate();

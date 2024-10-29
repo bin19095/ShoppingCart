@@ -4,7 +4,7 @@ import Products from './Pages/Products/Products';
 import Contact from './Pages/Contact';
 import ViewProduct from './Components/Product/ViewProduct/ViewProduct';
 import TopNavBar from './Components/Header/TopNavBar';
-import CartPage from './Components/CartPage/CartPage';
+import CartPage from './CartPage/CartPage';
 
 function App() {
   return (

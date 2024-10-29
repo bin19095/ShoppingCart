@@ -11,7 +11,6 @@ function Products({productTypes}) {
 console.log("value 2 product",{productTypes}, status)
   return (
     <>
-   
     <AllCategories />
     <Container>
         <h3 className='text-center mb-4'>

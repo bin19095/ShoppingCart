@@ -7,17 +7,16 @@ import LatestProducts from '../Components/Product/LatestProducts';
 function HomePage() {
   return (
     <>
-   
-   
     <HeaderSlider/>
     <div className='mb-5 pb-5'></div>
     <div className='mb-5 pb-5'></div>
     <AllCategories/>
     <LatestProducts productTypes="" />
+    <AllCategories/>
+    <LatestProducts productTypes="" />
     <div className='mb-5 pb-5'></div>
     <div className='mb-5 pb-5'></div>
     <Footers />
- 
     </>
   )
 }

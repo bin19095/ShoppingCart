@@ -1,7 +1,8 @@
+
 import React, { useContext } from 'react'
 import CartList from "./CartList";
 import { Container, Row, Col } from 'react-bootstrap';
-import ProductContext from '../../Context/productContext';
+import ProductContext from '../Context/productContext';
 
 const CartPage = () => {
   const { getProduct } = useContext(ProductContext);

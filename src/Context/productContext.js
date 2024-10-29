@@ -1,6 +1,6 @@
+
 import { createContext,  useState} from 'react';
 import fakeApi from '../api/fakeApi';
-
 const ProductContext = createContext();
 
 function Provider({ children }){
