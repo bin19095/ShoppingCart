@@ -4,7 +4,6 @@ import fakeApi from '../api/fakeApi';
 const ProductContext = createContext();
 
 function Provider({ children }){
-    console.log("inside provider")
     const [getProduct, setProduct ] = useState([]);
     const [query, setQuery ] = useState(null);
     console.log(query)
@@ -30,6 +29,9 @@ function Provider({ children }){
         let count = 1;
         try{
 
+            if(!id){
+                return;
+            }
             const response = await fakeApi.get(`/products/${id}`);
             console.log("response product to store", response.data);
             const newProduct = {...response.data, quantity: 1};
@@ -39,7 +41,7 @@ function Provider({ children }){
             if(existingProductIndex !== -1){
                 //means product already in the cart; increaste the quantity
                 updateCart = getProduct.map((product, index) =>
-                index === existingProductIndex ? {...product, quantity: product.quantity + 1 }
+                index === existingProductIndex ? {...product, quantity: product?.quantity + 1 }
                 :product
             )
             }

@@ -8,7 +8,7 @@ const CartList = ({list,price}) => {
         <Card.Img variant="top" className="py-3 card-img" src={list.image} />
           <Card.Body>
             <Card.Title>
-                {list.title.slice(0,25)}
+                {list.title?.slice(0,25)}
             </Card.Title>
             <Card.Text className="text-capitalize text-decoration-none fs-6">
               {list.category}

@@ -9,11 +9,10 @@ import  { useState, useEffect } from 'react';
 
 useEffect(() =>{
     const fetchProducts = async () => {
-        console.log("checkingType", checkType)
         setStatus('fetching');
         try {
             const endpoint = checkType ? `/products/${checkType}` : '/products';
-            console.log("endPoint from hook", endpoint)
+          
             const response = await fakeApi.get(endpoint);
             setProducts(response);
             setStatus('fetched');

@@ -17,12 +17,9 @@ function AllCategories() {
 
   // },[])
 
-  const [filterType, setFilterType] = useState('/categories');
+  const [filterType] = useState('/categories');
   const {status,products} = useFilterProduct(filterType);
-  
-  console.log("testing product hooks from cat",products, "cat status",status,"cat filterType",filterType);
-
-const renderCategory = products.data?.map(( category,index) => {
+  const renderCategory = products.data?.map(( category,index) => {
   
   return(
   <Col xs={12}   key = {index} sm={6} md={3} className="mb-2 p-0">

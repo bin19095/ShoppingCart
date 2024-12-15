@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import {  Container, Row} from 'react-bootstrap'
 import ProductCard from './Card/ProductCard';
 // import fakeApi from '../../api/fakeApi';
@@ -21,9 +21,9 @@ const LatestProducts = ({productTypes}) => {
     
     //const [products, setProducts ] = useState([]);
     //const endpoint = productTypes ? `category/${productTypes}` : '/products'
-    const [filterType, setFilterType] = useState(null);
+    const [filterType] = useState(null);
     const {status,products} = useFilterProduct(filterType);
-    console.log("status result ",status, "data response",products);
+
     
 
     // const findProduct = async() =>{

@@ -14,7 +14,6 @@ let flag= false;
 
   useEffect(() =>{
     const fetchingDetails = async() => {
-      console.log('step1 useEffect')
       try{
         const endPoint = productId ? `/products/${productId}`  : '/products';
         const response = await fakeApi.get(endPoint);
@@ -25,7 +24,7 @@ let flag= false;
     }
     fetchingDetails();
  
-  },[]);
+  },[productId]);
 
   const handleCartClick = (id) => {
     handleCart(id);  
@@ -110,10 +109,10 @@ if(index ===2){
     </Col>
     <Col md={4}  xs={6} lg={4} sm={4} className="md-4"  >
     <Card className="custom-card"  >
-       {getProduct && getProduct!==null && cartRender.length<=3 ? cartRender : <> {cartRender} <button> click to load more...</button></>}
+       {getProduct && getProduct!==null && cartRender.length <=3 ? cartRender : <> {cartRender} <button> click to load more...</button></>}
        {flag ? <Link to='/carts'><button>View Cart</button> </Link>: ""}
         
-        <h1>Total Amount : {totalCartAmount} </h1>
+        <h1>Total Amount : {totalCartAmount?.toString()} </h1>
     
   
     </Card>

@@ -6,13 +6,12 @@ import { Card, Col } from 'react-bootstrap';
 import ReactStars from 'react-rating-stars-component';
 import { useNavigate } from 'react-router-dom';
 
-import ViewProduct from '../ViewProduct/ViewProduct';
+
 
 const ProductCard = ({products}) => {
     const navigate = useNavigate();
    
     const handleClick = (id) => {
-        console.log("clicked id", id);
         navigate(`/products/${id}`);
 
 
@@ -20,8 +19,10 @@ const ProductCard = ({products}) => {
    
 
   
-
-const renderedCards = products.data?.map( (product) => {
+if(!products){
+    return "Something went wrong";
+}
+const renderedCards = products && products.data?.map( (product) => {
 
     return (
         <Col md={4} xs={6} lg={4} sm={6} className="md-4" key={product.id} onClick={() =>handleClick(product.id)} >

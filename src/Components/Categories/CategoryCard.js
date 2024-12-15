@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Card } from 'react-bootstrap';
 import './CategoryCard.css';
 const CategoryCard = ({category}) =>  {
-  console.log("results",category);
+ 
   return (
     <div>
         <Link to={`/${category}`} className='text-decoration-none text-dark'>
