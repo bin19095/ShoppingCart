@@ -30,7 +30,7 @@ function Provider({ children }){
         try{
 
             if(!id){
-                return;
+            return;
             }
             const response = await fakeApi.get(`/products/${id}`);
             console.log("response product to store", response.data);
