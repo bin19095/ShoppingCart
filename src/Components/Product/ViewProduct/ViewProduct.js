@@ -1,10 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, {  useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import ReactStars from 'react-rating-stars-component';
 import fakeApi from '../../../api/fakeApi';
 import ProductContext from '../../../Context/productContext';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
+
 
 const ViewProduct = () => {
   const {productId} = useParams();
@@ -53,6 +54,7 @@ if(index ===2){
                 <Card.Text className="text-capitalize text-decoration-none fs-6">
                     {product.category}
                 </Card.Text>
+                
                 <h5>${product.price}</h5>
         </Card.Body>      
   </>
@@ -91,9 +93,11 @@ if(index ===2){
                         </ReactStars>
                         {`${paramsDetail.rating?.count}`}
                     </div>
-                  <button onClick={() => handleCartClick(paramsDetail.id)}>
+                     <button  disabled={!paramsDetail.id} onClick={() => handleCartClick(paramsDetail.id)}>
                       Add to cart
                     </button>
+                 
+              
                    
                 </Card.Body>      
     </Card>

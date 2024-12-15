@@ -22,7 +22,7 @@ const LatestProducts = ({productTypes}) => {
     //const [products, setProducts ] = useState([]);
     //const endpoint = productTypes ? `category/${productTypes}` : '/products'
     const [filterType] = useState(null);
-    const {status,products} = useFilterProduct(filterType);
+    const {products} = useFilterProduct(filterType);
 
     
 
@@ -37,6 +37,7 @@ const LatestProducts = ({productTypes}) => {
 
 
     // },[])
+
   return (
     <Container>
         <h3 className='text-center mb-4'>
@@ -45,7 +46,13 @@ const LatestProducts = ({productTypes}) => {
             
             <Row>
                
-                <ProductCard products={products} />
+                {products ? <ProductCard products={products} /> :  <div className="d-flex justify-content-center">
+        Loading...
+  <div className="spinner-border" role="status">
+    <span className="sr-only"></span>
+  </div>
+</div> }
+                
                
             </Row>
       
