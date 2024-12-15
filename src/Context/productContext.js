@@ -26,9 +26,7 @@ function Provider({ children }){
      
     //   },[]);
     const handleCart = async (id) => {
-        let count = 1;
         try{
-
             if(!id){
             return;
             }

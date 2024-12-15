@@ -3,8 +3,9 @@ import { Card } from 'react-bootstrap'
 
 const CartList = ({list,price}) => {
   return (
-   
+    
       <Card className="">
+        { list && <>
         <Card.Img variant="top" className="py-3 card-img" src={list.image} />
           <Card.Body>
             <Card.Title>
@@ -17,7 +18,10 @@ const CartList = ({list,price}) => {
             <h5>${list.price} <h6>per price</h6></h5>
             
       </Card.Body>
+      </>
+}
       </Card>
+    
    
   )
 }
